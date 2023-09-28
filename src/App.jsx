@@ -4,7 +4,7 @@ import { Box, Button, Container, Typography } from '@mui/material';
 export const App = () => {
   return (
     <Container sx={{ border: 2 }}>
-      <h1>App</h1>
+      <h1>App1</h1>
       <Box
         sx={{
           border: 2,
@@ -17,6 +17,7 @@ export const App = () => {
       >
         es mui
       </Box>
+      <Button variant='contained'>Hola</Button>
     </Container>
   );
 };
