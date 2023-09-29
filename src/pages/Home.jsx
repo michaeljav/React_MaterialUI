@@ -9,7 +9,7 @@ import {
 import React, { useState } from 'react';
 import AddReactionIcon from '@mui/icons-material/AddReaction';
 export const Home = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -20,7 +20,19 @@ export const Home = () => {
           This is an error alert — check it out!
         </Alert>
 
-        <Snackbar open={open} message='Alert SnackBar'></Snackbar>
+        <Button variant='contained' onClick={() => setOpen(true)}>
+          Open
+        </Button>
+        <Snackbar
+          open={open}
+          autoHideDuration={1000}
+          onClose={() => setOpen(false)}
+        >
+          <Alert severity='error'>
+            <AlertTitle>Error</AlertTitle>
+            This is an error alert — check it out!
+          </Alert>
+        </Snackbar>
       </Box>
     </>
   );
