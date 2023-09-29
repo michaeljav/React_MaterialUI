@@ -1,15 +1,37 @@
 import React, { useState } from 'react';
 import { NavListDrawer } from './NavListDrawer';
-import { Button, Drawer } from '@mui/material';
+import {
+  AppBar,
+  Button,
+  Drawer,
+  IconButton,
+  Toolbar,
+  Typography,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Button variant='contained' onClick={() => setOpen(true)}>
-        Open Drawer
-      </Button>
+      <AppBar position='static'>
+        <Toolbar>
+          <IconButton
+            color='inherit'
+            size='large'
+            onClick={() => setOpen(true)}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant='h6' sx={{ flexGrow: 1 }}>
+            News
+          </Typography>
+          <Button color='inherit'>Home</Button>
+          <Button color='inherit'>Login</Button>
+        </Toolbar>
+      </AppBar>
+
       <Drawer open={open} anchor='left' onClose={() => setOpen(false)}>
         <NavListDrawer />
       </Drawer>

@@ -5,10 +5,13 @@ import { Navbar } from './components/navbar/Navbar';
 
 export const App = () => {
   return (
-    <Container sx={{ mt: 5 }}>
-      {/* <Product /> */}
-      {/* <BluCard /> */}
+    <>
+      {' '}
       <Navbar />
-    </Container>
+      <Container sx={{ mt: 5 }}>
+        {/* <Product /> */}
+        {/* <BluCard /> */}
+      </Container>
+    </>
   );
 };
