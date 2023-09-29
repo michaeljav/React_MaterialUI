@@ -1,29 +1,26 @@
-// import { Button } from '@mui/material/Button';
-import { Box, Button, Container, Typography } from '@mui/material';
-import AddLocationIcon from '@mui/icons-material/AddLocation';
+import { Container, Grid } from '@mui/material';
+
 export const App = () => {
   return (
-    <Container sx={{ border: 2 }}>
-      <h1>App1</h1>
-      <Box
-        sx={{
-          border: 2,
-          p: 5,
-          borderColor: 'peru',
-          bgcolor: '#111',
-          color: 'white',
-        }}
-        component='span'
-      >
-        es mui
-      </Box>
-      <Button
-        variant='contained'
-        color='success'
-        startIcon={<AddLocationIcon />}
-      >
-        Hola
-      </Button>
+    <Container>
+      <Grid container spacing={5}>
+        <Grid item xs={12} sm={6} md={4}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, magnam
+            et. Esse, aperiam voluptate sed commodi ipsa perspiciatis
+            repellendus eaque ea deserunt delectus. Quibusdam odio illum quidem
+            minima quam! Iste?
+          </p>
+        </Grid>
+        <Grid item xs={12} sm={12} md={4}>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, magnam
+            et. Esse, aperiam voluptate sed commodi ipsa perspiciatis
+            repellendus eaque ea deserunt delectus. Quibusdam odio illum quidem
+            minima quam! Iste?
+          </p>
+        </Grid>
+      </Grid>
     </Container>
   );
 };
