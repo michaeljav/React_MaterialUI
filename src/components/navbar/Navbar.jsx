@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+// import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
 import { NavListDrawer } from './NavListDrawer';
 import MenuIcon from '@mui/icons-material/Menu';
 
@@ -36,8 +39,8 @@ export const Navbar = ({ navArrayLinks }) => {
               <Button
                 color='inherit'
                 key={item.title}
-                component='a'
-                href={item.path}
+                component={NavLink}
+                to={item.path}
               >
                 {item.title}
               </Button>
@@ -52,7 +55,11 @@ export const Navbar = ({ navArrayLinks }) => {
         onClose={() => setOpen(false)}
         sx={{ display: { xs: 'flex', sm: 'none' } }}
       >
-        <NavListDrawer navArrayLinks={navArrayLinks} />
+        <NavListDrawer
+          navArrayLinks={navArrayLinks}
+          NavLink={NavLink}
+          setOpen={setOpen}
+        />
       </Drawer>
     </>
   );
