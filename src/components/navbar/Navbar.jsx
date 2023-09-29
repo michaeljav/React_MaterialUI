@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavListDrawer } from './NavListDrawer';
-import InboxIcon from '@mui/icons-material/Inbox';
-import DraftsIcon from '@mui/icons-material/Drafts';
+import MenuIcon from '@mui/icons-material/Menu';
+
 import {
   AppBar,
   Box,
@@ -11,27 +11,8 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
 
-const navLinks = [
-  {
-    title: 'Home',
-    path: '#',
-    icon: <InboxIcon />,
-  },
-  {
-    title: 'Login',
-    path: '#login',
-    icon: <DraftsIcon />,
-  },
-  {
-    title: 'Register',
-    path: '#register',
-    icon: <MenuIcon />,
-  },
-];
-
-export const Navbar = () => {
+export const Navbar = ({ navArrayLinks }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -51,7 +32,7 @@ export const Navbar = () => {
             News
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {navLinks.map((item) => (
+            {navArrayLinks.map((item) => (
               <Button
                 color='inherit'
                 key={item.title}
@@ -71,7 +52,7 @@ export const Navbar = () => {
         onClose={() => setOpen(false)}
         sx={{ display: { xs: 'flex', sm: 'none' } }}
       >
-        <NavListDrawer navLinks={navLinks} />
+        <NavListDrawer navArrayLinks={navArrayLinks} />
       </Drawer>
     </>
   );
