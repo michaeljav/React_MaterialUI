@@ -12,7 +12,7 @@ import InboxIcon from '@mui/icons-material/Inbox';
 import DraftsIcon from '@mui/icons-material/Drafts';
 export const NavListDrawer = () => {
   return (
-    <Box sx={{ width: 250, bgcolor: 'lightsalmon' }}>
+    <Box sx={{ width: 250 }}>
       <nav>
         <List>
           <ListItem>
